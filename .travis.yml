@@ -1,0 +1,18 @@
+if: tag IS present
+language: python
+install:
+- pip install -r requirements.txt
+script:
+- python build.py
+deploy:
+  provider: releases
+  api_key:
+    secure: rUpxA4cibhRviKLFHP1zrHNcN/CAWyv1SgcX4FXO4n2gPIOAAlqBGyRL4NDXisgG3JxRTUi/pPYk+IlbHB/cwS9B9hcnR2eWxk216bT4PfSOpj5tmNzWwnh6EBM8yvpLzCZMBr3qYQnxMBmj1AJkTvbRjPeh4ZB70YCdiW7OsL2LpnoD2ZQUGjOz0kd9Q+CG6SW3dUJxZwutCXzyn9MZIQzN8unCXGkHQ4F6kd5WH0b8p58+8TDUCtjGhVEFYNKwh8P/0+q6DwS7Q5/L0jSmkPVGH+TecQZSeMGWl+1mMBQe/aq1Ep5KTkJeVuoH/vyMsK38ErSkBX0v6GmfbtYkhA7sPrlw1mx7RYVfbDYuTShFIg3RrTIMZjAmXD2DsjP3WpZArcvCS3R6syhzMDhGcdQ7JPchcB8pndNz8R5PP+jfWIYrjfKP81kSvFayMjuFfCHLp+RPV2dMUaZh0qp5T2DHBkU3UdlSTOzSCSnPL40WrMyf5Bs2KFtmRpamLqJZx8BVBZ9VkhbZsZ0JJrjZwzaUBoXyBE4Ok8QHqLxCx/y4N6Tsl8k2bY+0PY5aaSbf/ZY+t5k5Ig4rXTTUzzA8rhpsFeLa6+K5XEVGv7gtjqJQD8x3IYCXc9bfnt+eujVJ1h+/xHBh2q/wDNHx/ljagBwfYxwLwd/qK+8PlymdeX8=
+  file:
+    - "data.md"
+    - "data.csv"
+    - "data.json"
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: leonbrandt/yt-itag

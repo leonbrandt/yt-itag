@@ -1,0 +1,4 @@
+Markdown>=3.2.1
+
+pytablereader>=0.29.0
+pytablewriter>=0.50.0
